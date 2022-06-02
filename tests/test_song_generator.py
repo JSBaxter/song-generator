@@ -5,24 +5,27 @@ import pytest
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == "0.1.0"
+
 
 def test_create_PitchClass_raises_type_error_for_no_input():
     with pytest.raises(TypeError) as err:
         pitch_class = PitchClass()
 
+
 def test_create_pitch_class_raises_value_error_for_invalid_pitch_class():
     with pytest.raises(ValueError) as err:
-        pitch_class = PitchClass('H')
+        pitch_class = PitchClass("H")
     with pytest.raises(ValueError) as err:
         pitch_class = PitchClass(13)
-        
+
+
 def test_create_pitch_class_assigns_semitone():
-    c = PitchClass('C')
+    c = PitchClass("C")
     assert c.semitone == 0
-    
-    b = PitchClass('B')
+
+    b = PitchClass("B")
     assert b.semitone == 11
-    d = PitchClass('D')
+    d = PitchClass("D")
     assert d == 2
     
